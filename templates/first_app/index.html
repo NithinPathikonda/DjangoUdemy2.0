@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USERS DATA!!</title>
+    <link rel="stylesheet" href="{% static 'css/mystyles.css' %}"/>
+</head>
+<body>
+    <h1>Hi welcome to Django level two!</h1>
+    <h2>Here are the access records</h2>
+
+    <div class="djangotwo">
+        {% if data %}
+         <table>
+            <thead>
+                <th>Firt Name</th>
+                <th>Last Name</th>
+                <th>Email Address</th>
+            </thead>
+            {% for acc in data %}
+            <tr>
+                <td>{{ acc.first_name }}</td>
+                <td>{{ acc.last_name }}</td>
+                <td>{{ acc.email }}</td>
+            </tr>
+            {% endfor %}
+         </table>
+         {% else %}
+          <p>OPPS! NO ACCESS RECORDS!!</p>
+        {% endif %}
+    </div>
+    
+</body>
+</html>
